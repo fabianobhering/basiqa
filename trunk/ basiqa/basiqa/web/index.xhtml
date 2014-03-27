@@ -43,8 +43,22 @@
                             margin-right: auto;">
                         <center>
                             <h:panelGrid id="panel_inputs"
-                                         columns="2"
+                                         columns="3"
                                          cellspacing="5">
+                                
+                                <p:outputPanel style="text-align: center;">
+                                    <h:outputText value="Parâmetro"
+                                                  style="font-weight: bolder; font-size: 15px"/>
+                                </p:outputPanel>
+                                <p:outputPanel style="text-align: center; ">
+                                    <h:outputText value="Valor"
+                                                  style="font-weight: bolder;  font-size: 16px"/>
+                                </p:outputPanel>
+                                <p:outputPanel style="text-align: center">
+                                    <h:outputText value="Peso"
+                                                  style="font-weight: bolder;  font-size: 16px"/>
+                                </p:outputPanel>
+                                
                                 <h:outputText value="Coliformes Fecais (NMP/100mL)"/>
                                 <p:inputText value="#{basIQABean.iqa.coliformes}"
                                              size="5"
@@ -58,6 +72,14 @@
                                     <!--                                    <f:validateLongRange minimum="1"
                                                                                              maximum="100000"/>-->
                                 </p:inputText>
+                                <p:spinner value="#{basIQABean.iqa.peso_coliformes}"
+                                           min="0"
+                                           max="1"
+                                           stepFactor="0.01"
+                                           size="5"
+                                           required="true"
+                                           maxlength="6"
+                                           styleClass="input_iqa"/>
 
                                 <h:outputText value="pH (unidades de pH)"/>
                                 <p:inputText value="#{basIQABean.iqa.ph}"
@@ -71,6 +93,15 @@
                                     <!--                                    <f:validateDoubleRange maximum="12.0"
                                                                                                minimum="2.0"/>-->
                                 </p:inputText>
+                                <p:spinner value="#{basIQABean.iqa.peso_ph}"
+                                           min="0"
+                                           max="1"
+                                           stepFactor="0.01"
+                                           size="5"
+                                           required="true"
+                                           maxlength="6"
+                                           styleClass="input_iqa"/>
+
 
                                 <h:outputText value="DBO (mg/L)"/>
                                 <p:inputText value="#{basIQABean.iqa.dbo}"
@@ -84,6 +115,15 @@
                                     <!--                                    <f:validateDoubleRange maximum="50.0"
                                                                                                minimum="0.0"/>-->
                                 </p:inputText>
+                                <p:spinner value="#{basIQABean.iqa.peso_dbo}"
+                                           min="0"
+                                           max="1"
+                                           stepFactor="0.01"
+                                           size="5"
+                                           required="true"
+                                           maxlength="6"
+                                           styleClass="input_iqa"/>
+
 
                                 <h:outputText value="Nitrogênio Total (mg/L)"/>
                                 <p:inputText value="#{basIQABean.iqa.nitrogenioTotal}"
@@ -97,6 +137,14 @@
                                     <!--                                    <f:validateDoubleRange maximum="100.0"
                                                                                                minimum="0.1"/>-->
                                 </p:inputText>
+                                <p:spinner value="#{basIQABean.iqa.peso_nitrogenioTotal}"
+                                           min="0"
+                                           max="1"
+                                           stepFactor="0.01"
+                                           size="5"
+                                           required="true"
+                                           maxlength="6"
+                                           styleClass="input_iqa"/>
 
                                 <h:outputText value="Fósforo Total (mg/L)"/>
                                 <p:inputText value="#{basIQABean.iqa.fosforoTotal}"
@@ -110,6 +158,14 @@
                                     <!--                                    <f:validateDoubleRange maximum="10.0"
                                                                                                minimum="0.0"/>-->
                                 </p:inputText>
+                                <p:spinner value="#{basIQABean.iqa.peso_fosforoTotal}"
+                                           min="0"
+                                           max="1"
+                                           stepFactor="0.01"
+                                           size="5"
+                                           required="true"
+                                           maxlength="6"
+                                           styleClass="input_iqa"/>
 
                                 <h:outputText value="Variação de Temperatura  (°C)"/>
                                 <p:inputText value="#{basIQABean.iqa.variacaoTemperatura}"
@@ -123,6 +179,14 @@
                                     <!--                                    <f:validateDoubleRange maximum="15.0"
                                                                                                minimum="-5.0"/>-->
                                 </p:inputText>
+                                <p:spinner value="#{basIQABean.iqa.peso_variacaoTemperatura}"
+                                           min="0"
+                                           max="1"
+                                           stepFactor="0.01"
+                                           size="5"
+                                           required="true"
+                                           maxlength="6"
+                                           styleClass="input_iqa"/>
 
                                 <h:outputText value="Turbidez (UNT)"/>
                                 <p:inputText value="#{basIQABean.iqa.turbidez}"
@@ -136,6 +200,14 @@
                                     <!--                                    <f:validateDoubleRange maximum="100.0"
                                                                                                minimum="0.0"/>-->
                                 </p:inputText>
+                                <p:spinner value="#{basIQABean.iqa.peso_turbidez}"
+                                           min="0"
+                                           max="1"
+                                           stepFactor="0.01"
+                                           size="5"
+                                           required="true"
+                                           maxlength="6"
+                                           styleClass="input_iqa"/>
 
                                 <h:outputText value="OD (% saturação)"/>
                                 <p:inputText value="#{basIQABean.iqa.od}"
@@ -149,6 +221,16 @@
                                     <!--                                    <f:validateDoubleRange maximum="140.0"
                                                                                                minimum="0.0"/>-->
                                 </p:inputText>
+                                <p:spinner value="#{basIQABean.iqa.peso_od}"
+                                           min="0"
+                                           max="1"
+                                           stepFactor="0.01"
+                                           size="5"
+                                           required="true"
+                                           maxlength="6"
+                                           styleClass="input_iqa"/>
+
+
 
                                 <h:outputText value="Sólidos Totais (mg/L)"/>
                                 <p:inputText value="#{basIQABean.iqa.solidosTotais}"
@@ -162,6 +244,15 @@
                                     <!--                                    <f:validateDoubleRange maximum="500.0"
                                                                                                minimum="0.0"/>-->
                                 </p:inputText>
+                                <p:spinner value="#{basIQABean.iqa.peso_solidosTotais}"
+                                           min="0"
+                                           max="1"
+                                           stepFactor="0.01"
+                                           size="5"
+                                           required="true"
+                                           maxlength="6"/>
+
+
                             </h:panelGrid>
                         </center>
                         <p:separator/>
@@ -256,7 +347,7 @@
                                 <f:selectItem itemValue="Integrada"
                                               itemLabel="Integrada"/>
                             </p:selectOneMenu>
-                            
+
                             <h:outputText value="Data da Coleta"/>
                             <p:calendar value="#{basIQABean.iqauc.data}"
                                         navigator="true"
@@ -339,24 +430,24 @@
                                           equações que descrevem as curvas propostas nos gráficos de qualidade da CETESB."/>
                         </div>
                     </p:fieldset>
-<!--                    <p:fieldset toggleable="true"
-                                legend="Versão desktop"
-                                collapsed="true">
-                        <h:panelGrid columns="2">
-                            <h:outputText style="text-align: justify"
-                                          value="Confira também o BasIQA para Desktop desenvolvido em plataforma Java."/>
-                            <h:form>
-                                <p:commandButton id="downloadLink" 
-                                                 value="Baixar" 
-                                                 ajax="false"   
-                                                 icon="ui-icon-arrowthichk-s"
-                                                 inline="true"
-                                                 onclick="PrimeFaces.monitorDownload(start(), stop());">  
-                                    <p:fileDownload value="#{basIQABean.file}" />  
-                                </p:commandButton> 
-                            </h:form>
-                        </h:panelGrid>
-                    </p:fieldset>-->
+                    <!--                    <p:fieldset toggleable="true"
+                                                    legend="Versão desktop"
+                                                    collapsed="true">
+                                            <h:panelGrid columns="2">
+                                                <h:outputText style="text-align: justify"
+                                                              value="Confira também o BasIQA para Desktop desenvolvido em plataforma Java."/>
+                                                <h:form>
+                                                    <p:commandButton id="downloadLink" 
+                                                                     value="Baixar" 
+                                                                     ajax="false"   
+                                                                     icon="ui-icon-arrowthichk-s"
+                                                                     inline="true"
+                                                                     onclick="PrimeFaces.monitorDownload(start(), stop());">  
+                                                        <p:fileDownload value="#{basIQABean.file}" />  
+                                                    </p:commandButton> 
+                                                </h:form>
+                                            </h:panelGrid>
+                                        </p:fieldset>-->
                     <p:fieldset toggleable="true"
                                 legend="Desenvolvimento"
                                 collapsed="true"
@@ -369,6 +460,8 @@
                     </p:fieldset>
                 </p:dialog>
             </div>
+            <br />
+            <h:link outcome="welcomePrimefaces" value="Primefaces welcome page" />
         </h:body>
     </f:view>
 </html>
