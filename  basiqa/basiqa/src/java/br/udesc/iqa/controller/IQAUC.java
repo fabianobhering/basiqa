@@ -15,7 +15,7 @@ import net.sf.jasperreports.engine.util.JRLoader;
 public class IQAUC {
 
     private IQA iqa;
-    
+
     private String instituicao;
     private String numero_amostra;
     private String tipo_amostra = "Simples";
@@ -42,7 +42,6 @@ public class IQAUC {
         this.data = data;
     }
 
-    
     public String getLocalizacao() {
         return localizacao;
     }
@@ -110,32 +109,32 @@ public class IQAUC {
 //    Calculo do IQA
     public void calcularIQA() {
         double valor;
-        valor = Math.pow(coliformesFecais(iqa.getColiformes()), 0.15);
-        System.out.println("Coliformes: " + Math.pow(coliformesFecais(iqa.getColiformes()), 0.15));
+        valor = Math.pow(coliformesFecais(iqa.getColiformes()), iqa.getPeso_coliformes());
+        System.out.println("Coliformes: " + Math.pow(coliformesFecais(iqa.getColiformes()), iqa.getPeso_coliformes()));
 
-        valor *= Math.pow(ph(iqa.getPh()), 0.12);
-        System.out.println("pH: " + Math.pow(ph(iqa.getPh()), 0.12));
+        valor *= Math.pow(ph(iqa.getPh()), iqa.getPeso_ph());
+        System.out.println("pH: " + Math.pow(ph(iqa.getPh()), iqa.getPeso_ph()));
 
-        valor *= Math.pow(demandaBioquimicaOxigenio(iqa.getDbo()), 0.10);
-        System.out.println("dbo: " + Math.pow(demandaBioquimicaOxigenio(iqa.getDbo()), 0.10));
+        valor *= Math.pow(demandaBioquimicaOxigenio(iqa.getDbo()), iqa.getPeso_dbo());
+        System.out.println("dbo: " + Math.pow(demandaBioquimicaOxigenio(iqa.getDbo()), iqa.getPeso_dbo()));
 
-        valor *= Math.pow(nitrogenioTotal(iqa.getNitrogenioTotal()), 0.10);
-        System.out.println("nt: " + Math.pow(nitrogenioTotal(iqa.getNitrogenioTotal()), 0.10));
+        valor *= Math.pow(nitrogenioTotal(iqa.getNitrogenioTotal()), iqa.getPeso_nitrogenioTotal());
+        System.out.println("nt: " + Math.pow(nitrogenioTotal(iqa.getNitrogenioTotal()), iqa.getPeso_nitrogenioTotal()));
 
-        valor *= Math.pow(fosforoTotal(iqa.getFosforoTotal()), 0.10);
-        System.out.println("ft: " + Math.pow(fosforoTotal(iqa.getFosforoTotal()), 0.10));
+        valor *= Math.pow(fosforoTotal(iqa.getFosforoTotal()), iqa.getPeso_fosforoTotal());
+        System.out.println("ft: " + Math.pow(fosforoTotal(iqa.getFosforoTotal()), iqa.getPeso_fosforoTotal()));
 
-        valor *= Math.pow(temperatura(iqa.getVariacaoTemperatura()), 0.10);
-        System.out.println("temp: " + Math.pow(temperatura(iqa.getVariacaoTemperatura()), 0.10));
+        valor *= Math.pow(temperatura(iqa.getVariacaoTemperatura()), iqa.getPeso_variacaoTemperatura());
+        System.out.println("temp: " + Math.pow(temperatura(iqa.getVariacaoTemperatura()), iqa.getPeso_variacaoTemperatura()));
 
-        valor *= Math.pow(turbidez(iqa.getTurbidez()), 0.08);
-        System.out.println("tur: " + Math.pow(turbidez(iqa.getTurbidez()), 0.08));
+        valor *= Math.pow(turbidez(iqa.getTurbidez()), iqa.getPeso_turbidez());
+        System.out.println("tur: " + Math.pow(turbidez(iqa.getTurbidez()), iqa.getPeso_turbidez()));
 
-        valor *= Math.pow(oxigenioDissolvido(iqa.getOd()), 0.17);
-        System.out.println("od: " + Math.pow(oxigenioDissolvido(iqa.getOd()), 0.17));
+        valor *= Math.pow(oxigenioDissolvido(iqa.getOd()), iqa.getPeso_od());
+        System.out.println("od: " + Math.pow(oxigenioDissolvido(iqa.getOd()), iqa.getPeso_od()));
 
-        valor *= Math.pow(residuoTotal(iqa.getSolidosTotais()), 0.08);
-        System.out.println("rt: " + Math.pow(residuoTotal(iqa.getSolidosTotais()), 0.08));
+        valor *= Math.pow(residuoTotal(iqa.getSolidosTotais()), iqa.getPeso_solidosTotais());
+        System.out.println("rt: " + Math.pow(residuoTotal(iqa.getSolidosTotais()), iqa.getPeso_solidosTotais()));
 
 //        BigDecimal valorExatao = new BigDecimal(valor).setScale(2, RoundingMode.HALF_DOWN);
 //        valor = valorExatao.doubleValue();

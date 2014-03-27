@@ -5,6 +5,7 @@ import br.udesc.iqa.controller.IQAUC;
 import br.udesc.iqa.model.IQA;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 import javax.faces.bean.ManagedBean;
@@ -21,7 +22,7 @@ import org.primefaces.model.StreamedContent;
 
 @ManagedBean
 @SessionScoped
-public class BasIQABean {
+public class BasIQABean implements Serializable{
 
     private IQA iqa;
     private IQAUC iqauc;
